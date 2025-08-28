@@ -1,64 +1,47 @@
-# maxis
+# 🏍️ Moto Portal (Vue 3 + FSD)
 
-This template should help get you started developing with Vue 3 in Vite.
+Учебно-демонстрационный проект для live-coding собеседования.  
+Сделан в стиле **мото-тематики**: есть **гараж**, **сборка мотоцикла**, **список задач** и **список присутствующих**.  
+В финале доступен вау-эффект с именами участников 🚀
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Стек
+- [Vue 3](https://vuejs.org/) (Composition API, `<script setup>`)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [VueUse](https://vueuse.org/) — удобные композиционные хуки
+- [FSD](https://feature-sliced.design/ru/docs/get-started/overview) — методология организации кода
+- LocalStorage через `useStorage` (VueUse)
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 📂 Структура проекта
+```
+/src
+    app/      # инициализация приложения, App.vue, роутер, pinia
+    entities/ # доменные сущности (attendee, task)
+    features/ # прикладные сценарии (добавление участника/задачи и т.п.)
+    widgets/  # самостоятельные блоки UI (панели, сборка мотоцикла, финал)
+    pages/    # страницы (home, challenge)
+    shared/   # утилиты, общие компоненты
+```
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🏗️ Установка и запуск
 
-## Project Setup
-
-```sh
+```bash
+# Установить зависимости
 pnpm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Запустить в dev-режиме
 pnpm dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
+# Сборка на прод
 pnpm build
 
-# Runs the end-to-end tests
-pnpm test:e2e
-# Runs the tests only on Chromium
-pnpm test:e2e --project=chromium
-# Runs the tests of a specific file
-pnpm test:e2e tests/example.spec.ts
-# Runs the tests in debug mode
-pnpm test:e2e --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+# Превью собранной версии
+pnpm preview
