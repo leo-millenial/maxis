@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useTasks } from '@/entities/task/model/store'
-import TaskItem from '@/entities/task/ui/TaskItem.vue'
+import { useTasks, TaskItem } from '@/entities/task'
 import { AddTaskForm } from '@/features/task-add'
 
 const tasks = useTasks()
