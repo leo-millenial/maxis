@@ -19,7 +19,7 @@
       </nav>
     </header>
 
-    <div class="p-5">
+    <div>
       <router-view />
     </div>
   </div>
