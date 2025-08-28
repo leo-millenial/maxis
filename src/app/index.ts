@@ -1,4 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { router, pinia } from './providers'
 
-export const app = createApp(App)
+const app = createApp(App)
+
+app.use(pinia)
+app.use(router)
+
+export { app }
